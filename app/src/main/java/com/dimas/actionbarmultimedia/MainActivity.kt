@@ -13,6 +13,7 @@ import com.dimas.actionbarmultimedia.screen.MusicActivity
 import com.dimas.actionbarmultimedia.screen.VideoActivity
 import com.dimas.actionbarmultimedia.utils.IntentConstant
 import com.dimas.actionbarmultimedia.utils.musicUrl
+import com.dimas.actionbarmultimedia.utils.videoUrl
 
 
 class MainActivity : AppCompatActivity() {
@@ -39,6 +40,7 @@ class MainActivity : AppCompatActivity() {
     private fun openVideoPage() {
         binding.buttonVideo.setOnClickListener {
             val intent = Intent(this, VideoActivity::class.java)
+            intent.putExtra(IntentConstant.INTENT_VIDEO_URL, videoUrl)
             startActivity(intent)
         }
     }

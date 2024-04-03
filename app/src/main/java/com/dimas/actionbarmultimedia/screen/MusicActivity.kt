@@ -47,7 +47,6 @@ class MusicActivity : AppCompatActivity() {
             Toast.makeText(this, "Failed Load Media", Toast.LENGTH_SHORT).show()
             Log.e("Failed Media", e.message.orEmpty())
         }
-
     }
 
     private fun initButton() {
