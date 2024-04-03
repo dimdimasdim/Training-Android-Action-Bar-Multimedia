@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_black">#FF000000</color>
+    <color name="color_white">#FFFFFFFF</color>
+    <color name="color_sage">#9CAFAA</color>
+    <color name="color_sage_light">#D6DAC8</color>
+    <color name="color_peach">#E9A89B</color>
+    <color name="color_beige">#EFBC9B</color>
+</resources>
