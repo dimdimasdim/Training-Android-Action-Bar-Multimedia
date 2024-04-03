@@ -1,15 +1,23 @@
 package com.dimas.actionbarmultimedia
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.dimas.actionbarmultimedia.databinding.ActivityMainBinding
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+    private var badgeTextView: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,7 +28,20 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
+        lifecycleScope.launch {
+            delay(500L)
+        }
+        initializeBadgeProfile(menu)
+
         return true
+    }
+
+    private fun initializeBadgeProfile(menu: Menu?) {
+        val menuItem = menu?.findItem(R.id.action_profile)
+        val actionView = menuItem?.actionView
+        val badgeTextView = actionView!!.findViewById<TextView>(R.id.badge)
+        badgeTextView.text = "3"
+        badgeTextView.visibility = View.VISIBLE
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
