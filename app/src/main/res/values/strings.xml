@@ -3,4 +3,7 @@
     <string name="label_search">Search</string>
     <string name="label_history">History</string>
     <string name="label_profile">Profile</string>
+    <string name="label_stop">Stop</string>
+    <string name="label_play">Play</string>
+    <string name="label_pause">Pause</string>
 </resources>

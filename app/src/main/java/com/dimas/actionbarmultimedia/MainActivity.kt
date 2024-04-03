@@ -1,5 +1,6 @@
 package com.dimas.actionbarmultimedia
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -7,23 +8,36 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.lifecycleScope
 import com.dimas.actionbarmultimedia.databinding.ActivityMainBinding
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import com.dimas.actionbarmultimedia.screen.MusicActivity
+import com.dimas.actionbarmultimedia.screen.VideoActivity
 
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    private var badgeTextView: TextView? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initializeToolbar()
+        openMusicPage()
+        openVideoPage()
+    }
+
+    private fun openMusicPage() {
+        binding.buttonMusic.setOnClickListener {
+            val intent = Intent(this, MusicActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
+    private fun openVideoPage() {
+        binding.buttonVideo.setOnClickListener {
+            val intent = Intent(this, VideoActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
