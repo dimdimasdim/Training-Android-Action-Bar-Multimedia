@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.dimas.actionbarmultimedia.databinding.ActivityMainBinding
 import com.dimas.actionbarmultimedia.screen.MusicActivity
 import com.dimas.actionbarmultimedia.screen.VideoActivity
+import com.dimas.actionbarmultimedia.utils.IntentConstant
+import com.dimas.actionbarmultimedia.utils.musicUrl
 
 
 class MainActivity : AppCompatActivity() {
@@ -29,6 +31,7 @@ class MainActivity : AppCompatActivity() {
     private fun openMusicPage() {
         binding.buttonMusic.setOnClickListener {
             val intent = Intent(this, MusicActivity::class.java)
+            intent.putExtra(IntentConstant.INTENT_MUSIC_URL, musicUrl)
             startActivity(intent)
         }
     }
