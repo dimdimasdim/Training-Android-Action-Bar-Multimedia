@@ -28,9 +28,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
-        lifecycleScope.launch {
-            delay(500L)
-        }
         initializeBadgeProfile(menu)
 
         return true
@@ -42,14 +39,13 @@ class MainActivity : AppCompatActivity() {
         val badgeTextView = actionView!!.findViewById<TextView>(R.id.badge)
         badgeTextView.text = "3"
         badgeTextView.visibility = View.VISIBLE
+        actionView.setOnClickListener {
+            Toast.makeText(this, "1", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when(item.itemId) {
-            R.id.action_profile -> {
-                Toast.makeText(this, "1", Toast.LENGTH_SHORT).show()
-                true
-            }
             R.id.action_search -> {
                 Toast.makeText(this, "2", Toast.LENGTH_SHORT).show()
                 true
