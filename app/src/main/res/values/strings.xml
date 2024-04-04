@@ -8,5 +8,7 @@
     <string name="label_play">Play</string>
     <string name="label_pause">Pause</string>
     <string name="label_open_music_page">Open Music Page</string>
+    <string name="label_open_Gallery_page">Open Gallery Page</string>
     <string name="label_open_video_page">Open Video Page</string>
+    <string name="label_pick_gallery">Pick Galery</string>
 </resources>

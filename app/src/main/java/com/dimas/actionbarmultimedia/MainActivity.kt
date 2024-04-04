@@ -9,6 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.dimas.actionbarmultimedia.databinding.ActivityMainBinding
+import com.dimas.actionbarmultimedia.screen.GalleryActivity
 import com.dimas.actionbarmultimedia.screen.MusicActivity
 import com.dimas.actionbarmultimedia.screen.VideoActivity
 import com.dimas.actionbarmultimedia.utils.IntentConstant
@@ -25,8 +26,16 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initializeToolbar()
+        openGallery()
         openMusicPage()
         openVideoPage()
+    }
+
+    private fun openGallery() {
+        binding.buttonGallery.setOnClickListener {
+            val intent = Intent(this, GalleryActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun openMusicPage() {
