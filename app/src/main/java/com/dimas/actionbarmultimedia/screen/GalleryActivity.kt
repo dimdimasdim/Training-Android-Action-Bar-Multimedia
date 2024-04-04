@@ -63,7 +63,6 @@ class GalleryActivity : AppCompatActivity() {
         val file = getFile(this, uri)
         if (file?.exists() == true) {
             binding.imageDisplay.setImageURI(uri)
-            Toast.makeText(this, "Ulalala", Toast.LENGTH_SHORT).show()
         }
     }
 }

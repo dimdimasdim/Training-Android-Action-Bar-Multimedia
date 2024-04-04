@@ -11,4 +11,6 @@
     <string name="label_open_Gallery_page">Open Gallery Page</string>
     <string name="label_open_video_page">Open Video Page</string>
     <string name="label_pick_gallery">Pick Galery</string>
+    <string name="label_pick_camera">Pick Camera</string>
+    <string name="label_open_camera_page">Open Camera Page</string>
 </resources>

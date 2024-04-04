@@ -4,6 +4,7 @@ import android.content.Context
 import android.net.Uri
 import android.provider.OpenableColumns
 import android.util.Log
+import androidx.core.content.FileProvider
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -54,4 +55,19 @@ private fun queryName(context: Context, uri: Uri): String {
     val name = returnCursor.getString(nameIndex)
     returnCursor.close()
     return name
+}
+
+fun getTempFileUri(context: Context, tempFileName: String?): Uri? {
+    var tempFile: File? = null
+    try {
+        tempFile = File.createTempFile(tempFileName, ".jpg", context.cacheDir)
+        tempFile.createNewFile()
+    } catch (e: IOException) {
+        e.printStackTrace()
+    }
+    assert(tempFile != null)
+    return FileProvider.getUriForFile(
+        context, "com.dimas.actionbarmultimedia" + ".provider",
+        tempFile!!
+    )
 }
