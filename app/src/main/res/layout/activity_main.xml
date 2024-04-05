@@ -51,4 +51,13 @@
         android:textAllCaps="false"
         style="@style/Widget.MaterialComponents.Button"/>
 
+    <Button
+        android:id="@+id/buttonQR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/label_open_qr"
+        android:textAllCaps="false"
+        style="@style/Widget.MaterialComponents.Button"/>
+
 </LinearLayout>

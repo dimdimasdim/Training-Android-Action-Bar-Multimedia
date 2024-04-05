@@ -13,4 +13,6 @@
     <string name="label_pick_gallery">Pick Galery</string>
     <string name="label_pick_camera">Pick Camera</string>
     <string name="label_open_camera_page">Open Camera Page</string>
+    <string name="label_submit">Submit</string>
+    <string name="label_open_qr">Open QR Page</string>
 </resources>

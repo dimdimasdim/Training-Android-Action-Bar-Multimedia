@@ -12,6 +12,7 @@ import com.dimas.actionbarmultimedia.databinding.ActivityMainBinding
 import com.dimas.actionbarmultimedia.screen.CameraActivity
 import com.dimas.actionbarmultimedia.screen.GalleryActivity
 import com.dimas.actionbarmultimedia.screen.MusicActivity
+import com.dimas.actionbarmultimedia.screen.QRActivity
 import com.dimas.actionbarmultimedia.screen.VideoActivity
 import com.dimas.actionbarmultimedia.utils.IntentConstant
 import com.dimas.actionbarmultimedia.utils.musicUrl
@@ -31,6 +32,14 @@ class MainActivity : AppCompatActivity() {
         openGallery()
         openMusicPage()
         openVideoPage()
+        openQRPage()
+    }
+
+    private fun openQRPage() {
+        binding.buttonQR.setOnClickListener {
+            val intent = Intent(this, QRActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun openCamera() {
